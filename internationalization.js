@@ -1,4 +1,4 @@
-var Int1 = require('int1');
+const Int1 = require('int1');
 
 const january = new Date(9e8);
 const english = new Int1.DateTimeFormat('en', {month : 'long'});
