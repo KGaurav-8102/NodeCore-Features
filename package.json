@@ -13,6 +13,7 @@
   "author": "Gaurav Yadav",
   "license": "ISC",
   "dependencies": {
-    "assert": "^2.0.0"
+    "assert": "^2.0.0",
+    "intl": "^1.2.5"
   }
 }
