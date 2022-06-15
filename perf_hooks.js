@@ -1,9 +1,8 @@
-
-//onst { performance, PerformanceObserver } = require('perf_hooks');
+const { performance, PerformanceObserver } = require('perf_hooks');
 
 const { strict } = require("assert")
 
-/* const someFunction = () => {
+const someFunction = () => {
     console.log('Hello World!');
 }
 
@@ -33,11 +32,11 @@ wrapped(); */
 
 obs.observe({ type: 'mark'});
 performance.mark('test');
-performance.mark('meow'); */
+performance.mark('meow');
 
 //Performnace Hook monitor event lopp delay
 
-/* const { monitorEventLoopDelay } = require('perf_hooks');
+const { monitorEventLoopDelay } = require('perf_hooks');
 const h = monitorEventLoopDelay({ resolution: 20});
 
 h.enable();
@@ -48,7 +47,7 @@ console.log(h.mean);
 console.log(h.stddev);
 console.log(h.percentiles);
 console.log(h.percentile(50));
-console.log(h.percentile(99)); */
+console.log(h.percentile(99));
 
 //Measuring duration of async Operation
 
@@ -90,3 +89,4 @@ obs.observe({ entryTypes: ['measure'], buffered: true });
 
 setTimeout(() => {}, 1000);
 
+//Measuring how long it take to load dependencies
