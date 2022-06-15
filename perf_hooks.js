@@ -1,7 +1,7 @@
 
 const { performance, PerformanceObserver } = require('perf_hooks');
 
-const someFunction = () => {
+/* const someFunction = () => {
     console.log('Hello World!');
 }
 
@@ -18,4 +18,17 @@ const obs = new PerformanceObserver((list) => {
 obs.observe({ entryTypes: ['function'] });
 
 // A performance timeline entry will be created
-wrapped();
+wrapped(); */
+
+//Performance Observer entry list
+
+const obs = new PerformanceObserver((perfObserverlist, observer) => {
+    console.log(perfObserverlist.getEntries());
+    performance.clearMarks();
+    performance.clearMeasures();
+    observer.disconnect();
+})
+
+obs.observe({ type: 'mark'});
+performance.mark('test');
+performance.mark('meow');
