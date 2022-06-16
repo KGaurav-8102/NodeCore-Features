@@ -1,7 +1,7 @@
 
 //Immediate Class has used
 
-/* var Immediate = setImmediate(function alfa() {
+var Immediate = setImmediate(function alfa() {
     console.log("0.>", 12);
 })
 
@@ -23,7 +23,7 @@ console.log("4.>",Immediate.hasRef());
 clearImmediate(Immediate);
  
 // Prints after clearing Immediate
-console.log("5.>",2); */
+console.log("5.>",2);
 
 //Timeout
 // Node.js program to demonstrate the
