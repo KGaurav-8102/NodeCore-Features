@@ -3,7 +3,7 @@
 
 // Including vm and util module
 const vm = require('vm');
-
+/*
 // Creating context
 const context = {
 number: 2
@@ -19,4 +19,16 @@ vm.createContext(context);
 script.runInContext(context);
 
 // Displays output
-console.log(context);
+console.log(context); */
+
+//craete script.craetecachedData()
+
+const script = new vm.Script(`
+    const add = (a, b) => {
+        return a + b;
+    }
+    const x = add(1, 2);
+`)
+
+const cachedWithoutX = script.createCachedData();
+console.log(cachedWithoutX);
