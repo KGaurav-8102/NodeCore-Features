@@ -5,7 +5,7 @@ console.log(tag); */
 
 //getHeapStatisticsSpace()
 
-stats = v8.getHeapSpaceStatistics();
+/* stats = v8.getHeapSpaceStatistics();
 
 var myList = [];
 
@@ -20,4 +20,16 @@ for (var i = 0; i < stats.length; i++){
     );
   }
 
-  console.log(myList);
+  console.log(myList); */
+
+  //v8.getHeapStatistics();
+
+  stats = v8.getHeapStatistics();
+
+  
+console.log("Heap Stastistics are :");
+  
+console.log("total_heap_size:"+stats['total_heap_size']);
+console.log("used_heap_size:"+stats['used_heap_size']);
+console.log("heap_size_limit:"+stats['heap_size_limit']);
+console.log("does_zap_garbage:"+stats['does_zap_garbage']);
