@@ -84,11 +84,25 @@ console.log(serializer.releaseBuffer()); */
 
 
 // Accessing v8 module
-const serializer = new v8.Serializer();
+/*const serializer = new v8.Serializer();
   
 // Calling v8.serializer.writeValue() 
 console.log(serializer.releaseBuffer());
 console.log(serializer.writeValue("geeksforgeeks"));
 console.log(serializer.releaseBuffer());
+console.log(serializer.writeValue(9314.94));
+console.log(serializer.releaseBuffer());*/
+
+const serializer=new v8.Serializer();
+  
+// Calling v8.serializer.releaseBuffer() 
+console.log(serializer.releaseBuffer());
+console.log(serializer.writeValue("geeksforgeeks"));
+console.log(serializer.releaseBuffer());
+console.log(serializer.writeValue(9314.94));
+console.log(serializer.releaseBuffer());
+  
+// Appending one after another
+console.log(serializer.writeValue("geeksforgeeks"));
 console.log(serializer.writeValue(9314.94));
 console.log(serializer.releaseBuffer());
