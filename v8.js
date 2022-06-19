@@ -73,9 +73,22 @@ console.log(deserialized_data); */
 
 //v8.serilaize.WriteHaeder()
 
-const serializer = new v8.Serializer();
+/*const serializer = new v8.Serializer();
   
 // Calling v8.serializer.writeHeader() 
 console.log(serializer.releaseBuffer());
 console.log(serializer.writeHeader());
+console.log(serializer.releaseBuffer()); */
+
+//v8.serializer.writevalue()
+
+
+// Accessing v8 module
+const serializer = new v8.Serializer();
+  
+// Calling v8.serializer.writeValue() 
+console.log(serializer.releaseBuffer());
+console.log(serializer.writeValue("geeksforgeeks"));
+console.log(serializer.releaseBuffer());
+console.log(serializer.writeValue(9314.94));
 console.log(serializer.releaseBuffer());
