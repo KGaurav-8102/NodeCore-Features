@@ -93,7 +93,7 @@ console.log(serializer.releaseBuffer());
 console.log(serializer.writeValue(9314.94));
 console.log(serializer.releaseBuffer());*/
 
-const serializer=new v8.Serializer();
+/* const serializer=new v8.Serializer();
   
 // Calling v8.serializer.releaseBuffer() 
 console.log(serializer.releaseBuffer());
@@ -105,4 +105,33 @@ console.log(serializer.releaseBuffer());
 // Appending one after another
 console.log(serializer.writeValue("geeksforgeeks"));
 console.log(serializer.writeValue(9314.94));
+console.log(serializer.releaseBuffer()); */
+
+//v8.serializer.writeUint32()
+
+const serializer = new v8.Serializer();
+
+
+// Calling v8.serializer.writeUint32() 
 console.log(serializer.releaseBuffer());
+serializer.writeUint32(29698);
+console.log(serializer.releaseBuffer());
+  
+// Writing two 32 bits number one
+// after another
+console.log("writing two 32 bits "
+    + "number one after another");
+  
+serializer.writeUint32(29698);
+serializer.writeUint32(29698);
+console.log(serializer.releaseBuffer());
+  
+console.log("reading after write");
+  
+// Calling v8.serializer.writeUint32() 
+serializer.writeUint32(5783);
+  
+// Calling v8.deserializer.readUint32() 
+const deserializer = new 
+    v8.Deserializer(serializer.releaseBuffer());
+console.log(deserializer.readUint32());
