@@ -24,7 +24,7 @@ for (var i = 0; i < stats.length; i++){
 
   //v8.getHeapStatistics();
 
-  stats = v8.getHeapStatistics();
+  /* stats = v8.getHeapStatistics();
 
   
 console.log("Heap Stastistics are :");
@@ -32,4 +32,22 @@ console.log("Heap Stastistics are :");
 console.log("total_heap_size:"+stats['total_heap_size']);
 console.log("used_heap_size:"+stats['used_heap_size']);
 console.log("heap_size_limit:"+stats['heap_size_limit']);
-console.log("does_zap_garbage:"+stats['does_zap_garbage']);
+console.log("does_zap_garbage:"+stats['does_zap_garbage']); */
+
+//v8.serialize
+
+serialized_data = v8.serialize('abcdefg');
+console.log("\nSerialized data is ");
+console.log(serialized_data);
+  
+serialized_data = v8.serialize(58375693);
+console.log("\nSerialized data is ");
+console.log(serialized_data);
+  
+serialized_data = v8.serialize(73847.0234);
+console.log("\nSerialized data is ");
+console.log(serialized_data);
+  
+serialized_data = v8.serialize('\n');
+console.log("\nSerialized data is ");
+console.log(serialized_data);
