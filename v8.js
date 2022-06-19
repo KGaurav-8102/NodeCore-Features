@@ -55,7 +55,7 @@ console.log(serialized_data); */
 
 //v8.deserilaize
 
-deserialized_data = v8.deserialize(v8.serialize('abcdefg'));
+/* deserialized_data = v8.deserialize(v8.serialize('abcdefg'));
 console.log("\nDeserialized data is ");
 console.log(deserialized_data);
   
@@ -69,4 +69,13 @@ console.log(deserialized_data);
   
 deserialized_data = v8.deserialize(v8.serialize('Geek'));
 console.log("\nDeserialized data is ");
-console.log(deserialized_data);
+console.log(deserialized_data); */
+
+//v8.serilaize.WriteHaeder()
+
+const serializer = new v8.Serializer();
+  
+// Calling v8.serializer.writeHeader() 
+console.log(serializer.releaseBuffer());
+console.log(serializer.writeHeader());
+console.log(serializer.releaseBuffer());
