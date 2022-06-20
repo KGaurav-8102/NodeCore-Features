@@ -1,13 +1,13 @@
 // Node.js program to demonstrate	
 // zlib.constants property
 // Including zlib module
-const zlib = require("zlib");
+//const zlib = require("zlib");
 
 // Creating a buffer
-const buffer = Buffer.from('eJzT0yMA', 'base64');
+//const buffer = Buffer.from('eJzT0yMA', 'base64');
 
 // Calling unzip method
-zlib.unzip(
+/* zlib.unzip(
 buffer,
 
 // Using a different Zlib constant
@@ -26,4 +26,16 @@ buffer,
 });
 
 // Calling "constants" property of zlib
-zlib.constants;
+zlib.constants; */
+
+const zlib = require('zlib');
+
+const fs = require('fs');
+
+const inp = fs.createReadStream('input.txt');
+const out = fs.createWriteStream('input.txt.gz');
+
+const brot = zlib.createBrotliCompress();
+inp.pipe(brot).pipe(out);
+console.log('Program Completed');
+
