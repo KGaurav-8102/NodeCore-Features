@@ -64,7 +64,7 @@ inp.pipe(defR).pipe(out);
 console.log("Program Completed!"); */
 
 const zlib = require('zlib');
-const input = 'Geek';
+/* const input = 'Geek';
 
 zlib.gzip(input, (err, buffer) => {
 	if (!err) {
@@ -76,5 +76,38 @@ zlib.gzip(input, (err, buffer) => {
 	  }
 })
 
-console.log("Data Compressed.......");
+console.log("Data Compressed......."); */
 
+//zlib.bytesWrittten
+
+const assert = require('assert');
+
+const input = Buffer.from('0123456789012345678901');
+
+
+// Calling deflate method
+zlib.deflate(input, (err, deflatedBuffer) => {
+	assert(!err);
+	
+	// Declaring buffer and numberRead
+	var numberRead = 0;
+	var buffers = [];
+	
+	// Creating a zip object
+	var stream = zlib.createGzip()
+	
+	  // Data event
+	  .on('data', function(chunk) {
+	   buffers.push(chunk);
+	   numberRead += chunk.length;
+	  })
+	
+	  // end event
+	  .on('end', function() {
+		 
+		// Calling bytesWritten property
+		console.log(stream.bytesWritten);
+		 
+		})
+	  .end(deflatedBuffer);
+  });
