@@ -39,7 +39,7 @@ const brot = zlib.createBrotliDecompress();
 inp.pipe(brot).pipe(out);
 console.log('Program Completed'); */
 
-const zlib = require('zlib');
+/* const zlib = require('zlib');
 
 zlib.gzip('Nidhi Singh', (err, data) => {
 	if (err) {
@@ -51,5 +51,15 @@ zlib.gzip('Nidhi Singh', (err, data) => {
 	 {
 		console.log(data.toString());
 	});
-})
+}) */
+
+const zlib = require('zlib');
+const fs = require('fs');
+const inp = fs.createReadStream('input.txt');
+const out = fs.createWriteStream('input.txt.gz');
+
+const defR = zlib.createDeflateRaw();
+
+inp.pipe(defR).pipe(out);
+console.log("Program Completed!");
 
