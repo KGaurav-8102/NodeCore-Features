@@ -53,7 +53,7 @@ zlib.gzip('Nidhi Singh', (err, data) => {
 	});
 }) */
 
-const zlib = require('zlib');
+/* const zlib = require('zlib');
 const fs = require('fs');
 const inp = fs.createReadStream('input.txt');
 const out = fs.createWriteStream('input.txt.gz');
@@ -61,5 +61,20 @@ const out = fs.createWriteStream('input.txt.gz');
 const defR = zlib.createDeflateRaw();
 
 inp.pipe(defR).pipe(out);
-console.log("Program Completed!");
+console.log("Program Completed!"); */
+
+const zlib = require('zlib');
+const input = 'Geek';
+
+zlib.gzip(input, (err, buffer) => {
+	if (!err) {
+  
+		console.log(buffer.toString('base64'));
+	  } 
+	  else {
+		console.log(err);
+	  }
+})
+
+console.log("Data Compressed.......");
 
