@@ -28,14 +28,28 @@ buffer,
 // Calling "constants" property of zlib
 zlib.constants; */
 
-const zlib = require('zlib');
+/* const zlib = require('zlib');
 
 const fs = require('fs');
 
-const inp = fs.createReadStream('input.txt');
-const out = fs.createWriteStream('input.txt.gz');
+const inp = fs.createReadStream('input.txt.gz');
+const out = fs.createWriteStream('input.txt');
 
-const brot = zlib.createBrotliCompress();
+const brot = zlib.createBrotliDecompress();
 inp.pipe(brot).pipe(out);
-console.log('Program Completed');
+console.log('Program Completed'); */
+
+const zlib = require('zlib');
+
+zlib.gzip('Nidhi Singh', (err, data) => {
+	if (err) {
+		return console.log('err', err);
+	}
+	const unzip = zlib.createUnzip();
+	unzip.write(data);
+	unzip.on('data', function (data)
+	 {
+		console.log(data.toString());
+	});
+})
 
